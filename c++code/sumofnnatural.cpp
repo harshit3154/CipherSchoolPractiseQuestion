@@ -1,3 +1,7 @@
+/*
+    Program to find the sum of n natural number.
+*/
+
 #include <iostream>
 #define SUMN(X) (X*(X+1)/2)
 

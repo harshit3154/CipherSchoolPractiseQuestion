@@ -5,8 +5,9 @@
 #include <iostream>
 
 using namespace std;
-int sumOfOddNaturalNumber(int N){
-    int sum=(N+1)/2*(2+(N-1)*2);
+int sumOfOddNaturalNumber(int n){
+    int sum=(n)/2.0*(2+(n-1)*2);
+    // int sum=n*(1+(n-1));
     cout<<"\n\n\t\tThe sum of first n natural odd number is : "<<sum;
 }
 
