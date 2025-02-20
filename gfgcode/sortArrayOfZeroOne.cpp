@@ -1,5 +1,5 @@
 /*
-    We have to sort the array consisting of 0's, 1's and 2's
+    We have to sort the array consisting of 0's and 1's
 */
 
 #include  <iostream>
@@ -22,19 +22,15 @@ void sort1(vector<int> &nums){
 
 //Solving problem using counting sort with time complexity O(n) and space complexity O(n)
 void sort2(vector<int> &nums){
-    int z=0,o=0,i=0,j=0;
+    int z=0,i=0;
     for(auto it:nums){
         if(it==0) z++;
-        if(it==1) o++;
     }
     while(i<z){
         nums[i++]=0;
     }
-    while(j++<o){
-        nums[i++]=1;
-    }
     while(i<nums.size()){
-        nums[i++]=2;
+        nums[i++]=1;
     }
 }
 
@@ -47,15 +43,13 @@ void sort3(vector<int> &nums){
             swap(nums[i++],nums[mid++]);
         }else if(nums[mid]==1){
             mid++;
-        }else{
-            swap(nums[mid],nums[j--]);
         }
     }
 }
 
 int main(){
-    vector<int> a{0,2,2,1,1,0,0,0,2};
+    vector<int> a{0,1,1,0,0,0,};
     display(a);
-    sort2(a);
+    sort3(a);
     display(a);
 }
