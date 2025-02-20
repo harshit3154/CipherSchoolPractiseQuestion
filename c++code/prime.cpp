@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     int n;
     bool flag=true;
-    cout<<"\n\n\t\tEnter the value of n : ";
+    cout<<"\n\n\t\tEnter the value of number to be checked prime : ";
     cin>>n;
     for(int i=2;i<=sqrt(n);i++){
         if(n%i==0)
