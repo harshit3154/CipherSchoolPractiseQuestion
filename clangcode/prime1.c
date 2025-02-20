@@ -1,3 +1,7 @@
+/*
+    Program to check prime number with optimise approach.
+*/
+
 #include <stdio.h>
 #include <math.h>
 
@@ -7,7 +11,7 @@ void isPrime(int n){
         return;
     }
     int flag=1;
-    for(int i=2;i<=ceil(sqrt(n));i++){
+    for(int i=2;i<=floor(sqrt(n));i++){
         if(n%i==0)
         {
             printf("\n\n\n\t\t%d is not a prime number.",n);

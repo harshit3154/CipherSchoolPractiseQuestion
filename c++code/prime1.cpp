@@ -7,7 +7,7 @@ int main(){
     bool flag=true;
     cout<<"\n\n\t\tEnter the value of number to be checked prime : ";
     cin>>n;
-    for(int i=2;i<n;i++){
+    for(int i=2;i<=floor(sqrt(n));i++){
         if(n%i==0)
         {
             cout<<"\n\n\n\t\t\tIts not a prime number.";
