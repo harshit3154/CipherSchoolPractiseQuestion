@@ -32,30 +32,28 @@ LinkList* reverseLinkList(LinkList *head){
     if(!head){
         return head;
     }
-    LinkList *pre=nullptr,*current=head,*front=current->next?current->next:current;
-    while(front->next){
+    LinkList *pre=nullptr,*current=head;
+    while(current){
+        LinkList *front=current->next;
         current->next=pre;
         pre=current;
         current=front;
-        front=front->next;
     }
-    current->next=pre;
-    front->next=current;
-    return front;
+    return pre;
 }
 
 void display(LinkList *head){
     cout<<"\n\n\t\tThe element of the link list are\n\n\t\t\t:";
-    while(head->next){
+    while(head){
         cout<<head->data;
-        head=head->next;
         if(head->next)
-            cout<<"  --->  ";
+        cout<<"  --->  ";
+        head=head->next;
     }
 }
 
 int main(){
-    vector<int> a{1,2,3,4,5,6,7,8,9,10};
+    vector<int> a{1,1,2,1};
     LinkList *head=createLinkList(a);
     display(head);
     display(head);
