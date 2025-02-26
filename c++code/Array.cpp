@@ -85,9 +85,27 @@ bool isSorted(vector<int> nums){
 }
 
 int second_largest(vector<int> &nums){
+
     if(nums.size()<2){
         return -1;
     }
+    /* Naive approach.
+
+        sort(nums.begin(),nums.end());
+        for(int i=nums.size()-2;i>=0;i--){
+            if(nums[i]!=nums[i+1])
+                return nums[i];
+        }
+        return nums[nums.size()-2];
+
+
+        method2
+        sort(nums.begin(),nums.end(),greater<int>());
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]!=nums[i+1])
+            return nums[i+1];
+        }
+    */
     int l=nums[0],sl=nums[0];
     for(int i=1;i<nums.size();i++){
         if(nums[i]>l){
@@ -96,6 +114,27 @@ int second_largest(vector<int> &nums){
         }
     }
     return sl;
+}
+
+int kadansAlgo(vector<int> &nums){
+    int sum=nums[0];
+    int max_sum=nums[0];
+    for(int i=1;i<nums.size();i++){
+        sum=max(sum+nums[i],nums[i]);
+        max_sum=max(sum,max_sum);
+    }
+    return max_sum;
+}
+
+
+void displaySubArray(vector<int> &nums,int i,int j){
+    cout<<"{ ";
+    for(;i<=j;i++){
+        cout<<nums[i];
+        if(i!=j)
+            cout<<", ";
+    }
+    cout<<"},\n\t\t";
 }
 
 int main(){
@@ -113,5 +152,15 @@ int main(){
     sortZerosOnes(b);
     display(b);
     cout<<endl<<isSorted(b);
+    vector<int> c{1,2,3,4,-5,6,7,8,9,-10};
+    cout<<endl<<kadansAlgo(c);
+    vector<int> cd{1,2,3,4,5};
+    cout<<"\n\n\t\tThe subarray of the arrray are\n\n\t: {\t";
+    for(int i=0;i<cd.size();i++){
+        for(int j=i;j<cd.size();j++){
+            displaySubArray(cd,i,j);
+        }
+    }
+    cout<<"}";
     return 0;
 }
