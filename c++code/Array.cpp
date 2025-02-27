@@ -128,13 +128,15 @@ int kadansAlgo(vector<int> &nums){
 
 
 void displaySubArray(vector<int> &nums,int i,int j){
+    int sum=0;
     cout<<"{ ";
     for(;i<=j;i++){
+        sum+=nums[i];
         cout<<nums[i];
         if(i!=j)
             cout<<", ";
     }
-    cout<<"},\n\t\t";
+    cout<<"}  ---->  "<<sum<<" ,\n\t\t";
 }
 
 int main(){
@@ -157,6 +159,7 @@ int main(){
     vector<int> cd{1,2,3,4,5};
     cout<<"\n\n\t\tThe subarray of the arrray are\n\n\t: {\t";
     for(int i=0;i<cd.size();i++){
+        int sum=0;
         for(int j=i;j<cd.size();j++){
             displaySubArray(cd,i,j);
         }
