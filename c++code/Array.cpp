@@ -54,13 +54,12 @@ void sortZerosOnes(vector<int> &nums){
 }
 
 void sortZerosOnesDNP(vector<int> &nums){
-    int l=0,mid=0,h=0;
-    while(mid<h){
-        if(nums[mid]==0){
-            mid++;
+    int l=0,h=0;
+    while(l<h){
+        if(nums[l]==0){
             l++;
         }else{
-            swap(nums[mid],nums[h]);
+            swap(nums[l],nums[h]);
             h--;
         }
     }
