@@ -44,6 +44,11 @@ int majorityElement1(vector<int> &nums){
    return 0;
 }
 
+int majorityElement2(vector<int> &nums){
+    sort(nums.begin(),nums.end());
+    return nums[nums.size()/2];
+}
+
 int main(){
     vector<int> nums1{3,2,3},nums2{2,2,1,1,1,2,2};
     cout<<endl<<majorityElement1(nums1);
